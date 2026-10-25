@@ -44,6 +44,7 @@ struct Fts8203 {
 int fts8203_start(struct Fts8203 *, const uint8_t *, size_t);
 int fts8203_frame(struct Fts8203 *, struct Fts8203Frame *);
 int fts8203_read(struct Fts8203 *, uint8_t, uint8_t *, size_t);
+int fts8203_sleep(struct Fts8203 *);
 /* fts8203_state returns 1 only for confirmed ROM 8201 with boot state 1, 0 for a supported app. */
 int fts8203_state(struct Fts8203 *, int probe_boot);
 

@@ -57,6 +57,12 @@ static int write_command(struct Fts8203 *chip, uint8_t command, const uint8_t *d
     return exchange(chip, total, 0, length);
 }
 
+int fts8203_sleep(struct Fts8203 *chip)
+{
+    const uint8_t mode = 3;
+    return write_command(chip, 0xa5, &mode, 1);
+}
+
 int fts8203_read(struct Fts8203 *chip, uint8_t command, uint8_t *data, size_t length)
 {
     if (!data || !length || length > FTS8203_CHUNK) {
